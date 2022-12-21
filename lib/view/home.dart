@@ -28,22 +28,28 @@ class _MyHomePageState extends State<MyHomePage> {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               final _quotes = dataProvider.quoteList;
-              return ListView.builder(
-                itemCount: _quotes.length,
-                itemBuilder: (context, index) {
-                  final _item = _quotes[index];
-                  return QuoteWidget(
-                    model: _item,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                QuoteDetails(id: _item.id ?? '')),
+              return Column(
+                children: [
+                  Text('${snapshot.data.count}'),
+                  Expanded(
+                      child: ListView.builder(
+                    itemCount: _quotes.length,
+                    itemBuilder: (context, index) {
+                      final _item = _quotes[index];
+                      return QuoteWidget(
+                        model: _item,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    QuoteDetails(id: _item.id ?? '')),
+                          );
+                        },
                       );
                     },
-                  );
-                },
+                  ))
+                ],
               );
             } else {
               return const Center(

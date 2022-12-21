@@ -2,6 +2,7 @@ import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit_test/model/base_model.dart';
 import 'package:retrofit_test/model/quote.dart';
+import 'package:retrofit_test/model/response_model.dart';
 
 part 'api_client.g.dart';
 

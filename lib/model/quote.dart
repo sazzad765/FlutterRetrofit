@@ -1,9 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:retrofit_test/model/base_model.dart';
+import 'package:retrofit_test/model/response_model.dart';
 
 part 'quote.g.dart';
 
 @JsonSerializable()
-class Quote {
+class Quote extends DataModel{
   Quote({
     this.id,
     this.author,
@@ -39,7 +42,22 @@ class Quote {
   @JsonKey(name: 'dateModified')
   DateTime? dateModified;
 
-  factory Quote.fromJson(Map<String, dynamic> json) => _$QuoteFromJson(json);
+  factory Quote.fromJson(Map<String, dynamic> json) =>_$QuoteFromJson(json);
 
-  Map<String, dynamic> toJson() => _$QuoteToJson(this);
+  @override
+  fromJson(Map<String, dynamic> data) {
+    return _$QuoteFromJson(data);
+  }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
+
+  @override
+  Map<String, dynamic> toJson() {
+    // TODO: implement toJson
+    throw UnimplementedError();
+  }
+
+// Map<String, dynamic> toJson() => _$QuoteToJson(this);
 }
