@@ -8,6 +8,6 @@ Flutter project
 
 #Json serializable
 
-#Geniric Base Model
+#Generic Base Model
 
 
