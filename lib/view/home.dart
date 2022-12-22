@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
               final _quotes = dataProvider.quoteList;
               return Column(
                 children: [
-                  Text('${snapshot.data.count}'),
+                  // Text('${snapshot.data.count}'),
                   Expanded(
                       child: ListView.builder(
                     itemCount: _quotes.length,

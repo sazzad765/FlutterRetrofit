@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:retrofit_test/api/api_client.dart';
 import 'package:retrofit_test/model/quote.dart';
-import 'package:retrofit_test/model/base_model.dart';
-import 'package:retrofit_test/model/response_model.dart';
+import 'package:retrofit_test/model/base_response.dart';
 
 class Quotes extends ChangeNotifier {
   final RestClient _client;
@@ -12,7 +11,7 @@ class Quotes extends ChangeNotifier {
 
   List<Quote> get quoteList => _quoteList;
 
-  Future<BaseModelList<Quote>> getQuotes() async {
+  Future<BaseResponse<List<Quote>>> getQuotes() async {
     final result = await _client.getQuotes();
     _quoteList = result.results!;
     notifyListeners();

@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     final client =
-        RestClient(Dio(BaseOptions(contentType: "application/json")));
+        RestClient(Dio(BaseOptions(contentType: "application/json",)));
     return MultiProvider(
         providers: [Provider(create: (_) => Quotes(client: client))],
 

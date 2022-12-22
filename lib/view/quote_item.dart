@@ -24,6 +24,14 @@ class QuoteWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10.0),
                   child: Text(
+                   '${model.id}',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: Text(
                     model.content ?? '',
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontSize: 16),
