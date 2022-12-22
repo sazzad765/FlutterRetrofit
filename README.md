@@ -2,6 +2,12 @@
 
 Flutter project
 
-Example of Provider, Retrofit, json serializable
+#Provider
+
+#Retrofit
+
+#Json serializable
+
+#Geniric Base Model
 
 
