@@ -12,6 +12,7 @@ abstract class RestClient {
   @GET("/quotes")
   Future<BaseResponse<List<Quote>>> getQuotes();
 
+
   @GET("/quotes/{id}")
   Future<Quote> getQuoteById(@Path("id") String id);
 }
