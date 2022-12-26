@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:retrofit_test/provider/quotes.dart';
 import 'package:retrofit_test/view/base_layout.dart';
-import 'package:retrofit_test/view/quote_details.dart';
-import 'package:retrofit_test/view/quote_item.dart';
+import 'package:retrofit_test/view/quote/quote_details.dart';
+import 'package:retrofit_test/view/quote/quote_item.dart';
 
 class MyHomePage extends BasePage<MyHomePage> {
   const MyHomePage({
@@ -13,10 +13,6 @@ class MyHomePage extends BasePage<MyHomePage> {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
-
-  void myShowSuccess() {
-    //SnackBar.createAnimationController(vsync: vsync)
-  }
 }
 
 abstract class BasePage<T> extends StatefulWidget {

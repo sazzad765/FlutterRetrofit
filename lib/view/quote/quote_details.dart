@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:retrofit_test/model/quote.dart';
 import 'package:retrofit_test/provider/quotes.dart';
-import 'package:retrofit_test/view/quote_item.dart';
+import 'package:retrofit_test/view/quote/quote_item.dart';
 
 class QuoteDetails extends StatefulWidget {
   const QuoteDetails({Key? key, required this.id}) : super(key: key);

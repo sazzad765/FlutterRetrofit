@@ -3,10 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:retrofit_test/api/api_client.dart';
-import 'package:retrofit_test/provider/base_service.dart';
 import 'package:retrofit_test/provider/interceptors.dart';
 import 'package:retrofit_test/provider/quotes.dart';
-import 'package:retrofit_test/view/home.dart';
+import 'package:retrofit_test/view/quote/home.dart';
 
 void main() {
 
