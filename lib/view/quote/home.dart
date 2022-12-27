@@ -6,7 +6,7 @@ import 'package:retrofit_test/view/base_layout.dart';
 import 'package:retrofit_test/view/quote/quote_details.dart';
 import 'package:retrofit_test/view/quote/quote_item.dart';
 
-class MyHomePage extends BasePage<MyHomePage> {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({
     Key? key,
   }) : super(key: key);
@@ -15,13 +15,13 @@ class MyHomePage extends BasePage<MyHomePage> {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-abstract class BasePage<T> extends StatefulWidget {
-  const BasePage({Key? key}) : super(key: key);
-
-  void baseShowSuccess() {
-    //SnackBar.createAnimationController(vsync: vsync)
-  }
-}
+// abstract class BasePage<T> extends StatefulWidget {
+//   const BasePage({Key? key}) : super(key: key);
+//
+//   void baseShowSuccess() {
+//     //SnackBar.createAnimationController(vsync: vsync)
+//   }
+// }
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -29,6 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final dataProvider = Provider.of<Quotes>(context);
 
     final _quotes = dataProvider.quoteList;
+    print('length: ${_quotes.length}');
     return BaseLayout(
         title: 'Home',
         future: dataProvider.getQuotes(),

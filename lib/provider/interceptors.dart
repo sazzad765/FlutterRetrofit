@@ -5,8 +5,8 @@ class CustomInterceptors extends InterceptorsWrapper {
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     final data =
         options.data == null ? {} : options.data as Map<String, dynamic>;
-    data.putIfAbsent('token', () => 'asvdsbdf234567jhbddsfv');
-    data.putIfAbsent('user_id', () => '12309');
+    // data.putIfAbsent('token', () => 'asvdsbdf234567jhbddsfv');
+    // data.putIfAbsent('user_id', () => '12309');
     return handler.next(options.copyWith(data: data));
   }
 

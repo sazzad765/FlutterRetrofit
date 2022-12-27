@@ -9,7 +9,6 @@ import 'package:retrofit_test/view/quote/home.dart';
 
 void main() {
 
-  Provider.debugCheckInvalidValueType = null;
   runApp(const MyApp());
 }
 
@@ -32,7 +31,7 @@ class _MyAppState extends State<MyApp> {
 
       providers: [
         // Provider(create: (_) => BaseService(client:client)),
-        Provider(create: (_) => Quotes(client:client))
+        ChangeNotifierProvider(create: (_) => Quotes(client:client)),
       ],
 
       child: MaterialApp(

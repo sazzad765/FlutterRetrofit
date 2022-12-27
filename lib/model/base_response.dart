@@ -5,16 +5,18 @@ import 'package:json_annotation/json_annotation.dart';
 //   fromJson(Map<String, dynamic> data) {}
 // }
 
+enum APIResultType { success, connectionProblem, timeout, unauthorized, error }
+
 @JsonSerializable(genericArgumentFactories: true)
 class BaseResponse<T> {
-  BaseResponse({
-    this.count,
-    this.totalCount,
-    this.page,
-    this.totalPages,
-    this.lastItemIndex,
-    this.results,
-  });
+  BaseResponse(
+      {this.count,
+      this.totalCount,
+      this.page,
+      this.totalPages,
+      this.lastItemIndex,
+      this.results,
+      this.type = APIResultType.success, this.errorMessage = ''});
 
   @JsonKey(name: 'count')
   int? count;
@@ -34,19 +36,22 @@ class BaseResponse<T> {
   @JsonKey(name: 'results')
   T? results;
 
-  factory BaseResponse.fromJson(Map<String, dynamic> json,  Function(dynamic) create) {
+  APIResultType type;
+  String errorMessage;
+
+  factory BaseResponse.fromJson(
+      Map<String, dynamic> json, Function(dynamic) create) {
     return BaseResponse(
       count: json['count'] as int?,
       totalCount: json['totalCount'] as int?,
       page: json['page'] as int?,
       totalPages: json['totalPages'] as int?,
       lastItemIndex: json['lastItemIndex'] as int?,
-      results:create(json['results']),
+      type: APIResultType.success,
+      results: json['results'] == null ? null : create(json['results']),
     );
   }
 
 // Map<String, T> toJson() => _$BaseModelListToJson<T>(this);
 
 }
-
-
